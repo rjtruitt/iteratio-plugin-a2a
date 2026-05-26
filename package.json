@@ -1,0 +1,96 @@
+{
+  "name": "iteratio-plugin-a2a",
+  "version": "0.1.0",
+  "description": "Agent-to-agent coordination plugin for iteratio (formerly hive-orchestrator)",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "node": {
+        "types": "./dist/node.d.ts",
+        "default": "./dist/node.js"
+      },
+      "browser": {
+        "types": "./dist/browser.d.ts",
+        "default": "./dist/browser.js"
+      },
+      "react-server": {
+        "types": "./dist/browser.d.ts",
+        "default": "./dist/browser.js"
+      },
+      "default": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./tools": {
+      "types": "./dist/tools/index.d.ts",
+      "default": "./dist/tools/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig.node.json && tsc -p tsconfig.browser.json",
+    "test": "vitest run",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [
+    "iteratio",
+    "iteratio-plugin",
+    "agent",
+    "multi-agent",
+    "a2a",
+    "agent-to-agent",
+    "coordination",
+    "orchestration",
+    "llm",
+    "ai",
+    "hive",
+    "swarm",
+    "messaging",
+    "irc",
+    "channels",
+    "token-optimization",
+    "declarative"
+  ],
+  "author": "Rob Truitt",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rjtruitt/iteratio-plugin-a2a.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rjtruitt/hive-orchestrator/issues"
+  },
+  "homepage": "https://github.com/rjtruitt/hive-orchestrator#readme",
+  "dependencies": {
+    "zod": "^3.0.0"
+  },
+  "peerDependencies": {
+    "iteratio": "^0.1.0",
+    "zod": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.19.41",
+    "@typescript-eslint/eslint-plugin": "^7.3.1",
+    "@typescript-eslint/parser": "^7.3.1",
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.2.5",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

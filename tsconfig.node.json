@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "lib": ["ES2020"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["src/browser.ts", "src/transports/broadcast.ts", "src/__tests__/**", "src/__mocks__/**"]
+}
